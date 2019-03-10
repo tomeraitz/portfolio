@@ -1,0 +1,52 @@
+.main{
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(36em, 2fr));
+    height: 100vh;
+  }
+  
+  .Home{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/web-design-2038872_960_720.jpg");
+    display: grid;
+    color: white;
+    grid-template-rows: 13em 4em 14em 3em;
+    height: 115%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .title{
+    font-size: 3em;
+    grid-row-start: 2;
+    align-self: end;
+    font-weight: bold;
+    justify-self: center;
+    width: 82%;
+  }
+  
+  .des{
+    font-size: 1.5em;
+    text-size-adjust: auto;
+    grid-row-start: 3;
+    justify-self: center;
+    width: 82%;
+  }
+  
+  .buttonContact{
+    font-size: 1.5em;
+    background-color: #fab949;
+    grid-row-start: 4;
+    color: white;
+    justify-self: center;
+    border-radius: 12px;
+    border: none;
+    width: 9em;
+    height: 2em;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .buttonContact:hover{
+    background-color: #00000063;
+    color: #fab949;
+  }
