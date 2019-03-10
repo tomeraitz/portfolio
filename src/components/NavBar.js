@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import '../styles/navbar.css';
 import logo from '../images/imageedit_6_7757247570.png'
+import { observer, inject } from 'mobx-react';
 
+@inject('GenralStore')
+@observer
 class NavBar extends Component {
-    constructor(){
-        super()
-        this.state = {
-            backgroundColor : ""
-        }
+    listenScrollEvent = () => this.props.GenralStore.changeColor()
+    handelClick = e => {
+      if(e.target.id === 'Projects'){
+        window.scrollTo(0, 600);
+      }
+      else if(e.target.id === 'Home'){
+        window.scrollTo(0, 0);
+      }
+      this.props.GenralStore.changeActive(e.target.id)
     }
-    listenScrollEvent = e => {
-        if (window.scrollY > 500) {
-          this.setState({backgroundColor: '#00000063'})
-        } else {
-          this.setState({backgroundColor: ''})
-        }
-      }
     
-      componentDidMount() {
-        window.addEventListener('scroll', this.listenScrollEvent)
-      }
+    componentDidMount() {
+      window.addEventListener('scroll', this.listenScrollEvent)
+    }
   render() {
     return (
-      <div className="NavBar" style={{backgroundColor: this.state.backgroundColor}}>
+      <div className="NavBar" style={{backgroundColor: this.props.GenralStore.backgroundColor}}>
           <div><img src={logo} width="100%" height="100%"></img></div>
-          <div className="NavItems active">Home</div>
-          <div className="NavItems">Projects</div>
-          <div className="NavItems">Contact</div>
+          {this.props.GenralStore.items.map(i => {
+            return <div id={i.id} onClick={this.handelClick} className={i.className} >{i.id}</div>
+          })}
       </div>
     );
   }
