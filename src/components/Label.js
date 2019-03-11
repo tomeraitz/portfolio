@@ -5,7 +5,7 @@ class Label extends Component {
   render() {
     return (
       <div className="Label">
-            Socket.IO
+            {this.props.text}
       </div>
     );
   }
