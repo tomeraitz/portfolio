@@ -9,7 +9,7 @@ class NavBar extends Component {
     listenScrollEvent = () => this.props.GenralStore.changeColor()
     handelClick = e => {
       if(e.target.id === 'Projects'){
-        window.scrollTo(0, 600);
+        window.scrollTo(0, window.screen.availHeight/1.05);
       }
       else if(e.target.id === 'Home'){
         window.scrollTo(0, 0);

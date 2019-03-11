@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import { observer } from 'mobx-react'
+import Contact from './components/Contact';
 
 @observer
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
           <div className="main">
             <Home id="Home" />
             <Projects id="Projects" />
+            <Contact /> 
           </div>
       </div>
     );
