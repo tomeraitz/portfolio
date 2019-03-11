@@ -1,4 +1,37 @@
 .Contact{
-    background-color: #484945;
-    height: 200px;
+    background-color: #3d3e38;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.formTitle{
+    color: white;
+    font-size: 3em;
+    line-height: 1.45em;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: .1em;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.68);
+    height: 20px;
+}
+
+.formDescription{
+    font-size: 2em;
+    line-height: 1.7em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+input{
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 3em;
+    border-bottom: 2px solid #ffffff2b;
+    font-size: 4vh;
+    text-align: center;
 }

@@ -29,7 +29,7 @@ class GenralStore {
     }
 
     @action whatIsActive(){
-        this.items.map(i => {
+        this.items.forEach(i => {
             if(i.id === this.active){
                 i.className = "NavItems active"
             }

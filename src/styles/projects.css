@@ -68,7 +68,7 @@
   }
   
   .Label{
-    font-size: 1.5em;
+    font-size: 1.3em;
     background-color: #fab949;
     color: white;
     border-radius: 5px;
@@ -80,7 +80,7 @@
     display: grid;
     grid-template-rows: repeat(2 ,1fr);
     grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
-    grid-gap: 20px;
+    grid-gap: 7px;
   }
 
   .unvisibalePointer{

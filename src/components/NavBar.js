@@ -14,6 +14,9 @@ class NavBar extends Component {
       else if(e.target.id === 'Home'){
         window.scrollTo(0, 0);
       }
+      else{
+        window.scrollTo(0, window.screen.availHeight*6.5);
+      }
       this.props.GenralStore.changeActive(e.target.id)
     }
     
@@ -23,9 +26,9 @@ class NavBar extends Component {
   render() {
     return (
       <div className="NavBar" style={{backgroundColor: this.props.GenralStore.backgroundColor}}>
-          <div><img src={logo} width="100%" height="100%"></img></div>
+          <div><img alt="logo" src={logo} width="100%" height="100%"></img></div>
           {this.props.GenralStore.items.map(i => {
-            return <div id={i.id} onClick={this.handelClick} className={i.className} >{i.id}</div>
+            return <div key={i.id} id={i.id} onClick={this.handelClick} className={i.className} >{i.id}</div>
           })}
       </div>
     );

@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx'
+import { observable } from 'mobx'
 import projects from '../consts/projects'
 
 
