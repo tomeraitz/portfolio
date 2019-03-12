@@ -9,25 +9,37 @@ class ContactStore {
     @observable message = ''
     @observable phone = ''
 
-    @action sendTomail(e){
+    @action async sendTomail(e){
        const state = {name : this.name, email : this.email, message : this.message}
-        axios.post(
-            `https://formcarry.com/s/${fromId}`, 
-            state, 
-            {headers: {"Accept": "application/json"}}
-            )
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-
-        e.preventDefault();
+       if(state.name && (state.email || state.phone)){
+            await axios.post(
+              `https://formcarry.com/s/${fromId}`, 
+              state, 
+              {headers: {"Accept": "application/json"}}
+              )
+              .then(response =>{
+                console.log(response);
+              })
+              .catch(error =>{
+                console.log(error);
+          })
+          await this.setState()
+       }
+       else{
+        console.log("no data")
+       }
+        
     }
 
     @action changeState(e){
         this[e.target.name] = e.target.value
+    }
+
+    setState(){
+      this.name =''
+      this.email = ''
+      this.phone = ''
+      this.message = ''
     }
 
 }

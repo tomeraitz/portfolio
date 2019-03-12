@@ -21,10 +21,17 @@ class GenralStore {
     
 
     @action changeColor() {
-        if (window.scrollY > 500) {
-            this.backgroundColor = '#00000063'
-          } else {
+        if (window.scrollY < 500) {
             this.backgroundColor = ''
+            this.changeActive('Home')
+          } 
+          else if(window.scrollY > 500 &&  window.scrollY < 2657 ){
+            this.backgroundColor = '#00000063'
+            this.changeActive('Projects')
+          }
+          else {
+            this.backgroundColor = ''
+            this.changeActive('Contact')
         }
     }
 
