@@ -10,7 +10,6 @@
     height: 3em;
     height: 100%;
     grid-template-columns: repeat(auto-fill, minmax(20em, 2fr));
-    
   }
   
   .boxHeader{

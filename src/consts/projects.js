@@ -12,7 +12,8 @@ const rickAndMorty = {
     gitHub : "https://github.com/tomeraitz/rick-morty-game",
     url : "https://rick-and-morty-space-game.herokuapp.com/",
     img : rickI,
-    labels : ['Node.js' , 'React.js', 'Mobx', 'Socket.io', 'Express']
+    labels : ['Node.js' , 'React.js', 'Mobx', 'Socket.io', 'Express'],
+    animation : "fade-right"
 }
 
 const GoldRus = {
@@ -21,7 +22,8 @@ const GoldRus = {
     gitHub : "https://github.com/tomeraitz/GoldRush-game",
     url : "https://gold-rush-multi.herokuapp.com/",
     img : gold,
-    labels : ['Node.js' , 'vanilla js', 'Jquery','handlebar', 'Socket.io', 'Express']
+    labels : ['Node.js' , 'vanilla js', 'Jquery','handlebar', 'Socket.io', 'Express'],
+    animation : "fade-left"
 }
 
 const MMS = {
@@ -30,7 +32,8 @@ const MMS = {
     gitHub : "https://github.com/mms-gap/code",
     url : "http://avivbr.mtacloud.co.il/index",
     img : mmsI,
-    labels : ['PHP' , 'Gmail API', 'Jquery','vanilla js', 'SQL', 'Bootstrap']
+    labels : ['PHP' , 'Gmail API', 'Jquery','vanilla js', 'SQL', 'Bootstrap'],
+    animation : "fade-right"
 }
 
 const crm = {
@@ -39,7 +42,8 @@ const crm = {
     gitHub : "https://github.com/tomeraitz/React-FullStack-CRM-System",
     url : "https://crm-tomer.herokuapp.com",
     img : crmI,
-    labels : ['Node.js' , 'React.js', 'MongoDB', 'Express']
+    labels : ['Node.js' , 'React.js', 'MongoDB', 'Express'],
+    animation : "fade-left"
 }
 
 const quiz = {
@@ -48,7 +52,8 @@ const quiz = {
     gitHub : "https://github.com/tomeraitz/PHP-Quiz-Your-self",
     url : "http://avivbr.mtacloud.co.il/QuizYourSelf/register.php",
     img : quizI,
-    labels : ['PHP' , 'Google API','vanilla js', 'SQL', 'Bootstrap']
+    labels : ['PHP' , 'Google API','vanilla js', 'SQL', 'Bootstrap'],
+    animation : "fade-right"
 }
 
 const doggies = {
@@ -57,7 +62,8 @@ const doggies = {
     gitHub : "https://github.com/tomeraitz/doggies",
     url : "https://doggies-app.herokuapp.com",
     img : doggiesI,
-    labels : ['Node.js' , 'vanilla js', 'Jquery','handlebar', 'MongoDB', 'Express' , 'StreetMap']
+    labels : ['Node.js' , 'vanilla js', 'Jquery','handlebar', 'MongoDB', 'Express' , 'StreetMap'],
+    animation : "fade-left"
 }
 
 const frog = {
@@ -66,7 +72,8 @@ const frog = {
     gitHub : "https://github.com/tomeraitz/catchAfrog-game",
     url : "https://tomeraitz.github.io/catchAfrog-game/index.html",
     img : frogI,
-    labels : ['vanilla js', 'Jquery','handlebar']
+    labels : ['vanilla js', 'Jquery','handlebar'],
+    animation : "fade-right"
 }
 const projects = [rickAndMorty, GoldRus , MMS, crm , quiz , doggies, frog]
 

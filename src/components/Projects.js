@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import '../styles/projects.css';
 import Label from './Label';
-
 import { observer, inject } from 'mobx-react';
 
-@inject('ProjectStore')
+@inject('ProjectStore' , 'GenralStore')
 @observer
 class Projects extends Component {
+  componentDidMount() {
+    let height = 0
+    if(window.screen.availWidth <= 600){
+      height =  this.refs.Projects.offsetTop*25
+    } 
+    else{
+      height = this.refs.Projects.offsetTop*20;
+    }
+      this.props.GenralStore.projectsHeight = height
+    }
+
   render() {
     const projects = this.props.ProjectStore.projects
     return (
-      <div className="Projects">
+      <div className="Projects" ref="Projects">
       {projects.map(p => {
-       return  <div className="Box" key={p.title}>
+       return  <div data-aos={p.animation} className="Box" key={p.title}>
                   <div className="boxContiner">
                     <div className="boxHeader">
                       <div className="white"></div>

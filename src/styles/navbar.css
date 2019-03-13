@@ -5,6 +5,7 @@
     grid-template-columns: repeat(4, 25%);
     width: 100%;
     grid-template-rows: 64px;
+    z-index: 9999;
   }
   
   .NavItems{

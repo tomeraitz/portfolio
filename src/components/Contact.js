@@ -4,6 +4,7 @@ import { observer, inject } from 'mobx-react';
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaStackOverflow } from "react-icons/fa";
+import Popup from './PopUp';
 
 @inject('ContactStore')
 @observer
@@ -22,12 +23,14 @@ class Contact extends Component {
                                                   send me your details by filling up the form below or 
                                                   send an email to tomeraitz1@gmail.com
                 </div>
-                <div >
+                <div data-aos="flip-up">
                     <input className="inputSmall" type="text" id="name" placeholder="Your Name" name="name" value={state.name} onChange={this.handleFields} />
                     <input className="inputSmall" type="email" id="email" placeholder="Your Email" name="email" value={state.email} onChange={this.handleFields} />
                     <input className="inputSmall" type="number" id="phone" placeholder="Your Phone" name="phone" value={state.phone}  onChange={this.handleFields} />
                     <textarea className="inputBig" type="text"  name="message" placeholder="Message" id="message" value={state.message}  onChange={this.handleFields}></textarea>
+                    <div className="formDescription">{state.error}</div>
                     <button onClick={this.handleForm}  type="submit" className="send">Send</button>
+                    {state.ispopUp? <Popup /> : null}
                 </div>
                 <div className="social">
                     <h1 className="formTitle">Find Me On Social Media</h1>

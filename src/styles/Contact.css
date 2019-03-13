@@ -79,6 +79,7 @@
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
     grid-column-gap: 20px;
+    
 }
 .socailLinks{
     display: grid;

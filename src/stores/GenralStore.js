@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 class GenralStore {
@@ -18,19 +19,23 @@ class GenralStore {
                             className: "NavItems",
                         }
                         ]
-    
+    @observable HomeHeight
+    @observable projectsHeight
+    @observable isLoaded = false
 
     @action changeColor() {
-        if (window.scrollY < 500) {
-            this.backgroundColor = ''
+   
+        if (window.scrollY < this.HomeHeight) {
+            this.backgroundColor = '#00000063'
             this.changeActive('Home')
           } 
-          else if(window.scrollY > 500 &&  window.scrollY < 2657 ){
+          
+          else if(window.scrollY < this.projectsHeight ){
             this.backgroundColor = '#00000063'
             this.changeActive('Projects')
           }
           else {
-            this.backgroundColor = ''
+            this.backgroundColor = '#00000063'
             this.changeActive('Contact')
         }
     }
@@ -52,6 +57,7 @@ class GenralStore {
         this.whatIsActive()
     }
 }
+AOS.init();
 
 export default new GenralStore()
 
