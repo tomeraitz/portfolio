@@ -2,9 +2,8 @@
     position: fixed;
     color: white;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
     width: 100%;
-    grid-template-rows: 64px;
     z-index: 9999;
   }
   
@@ -21,4 +20,9 @@
   
   .NavItems:hover{
     color : #fab949;
+  }
+
+  #logo{
+    max-width: 30vw;
+    max-height: 12vh;
   }

@@ -7,6 +7,7 @@ import { observer, inject } from 'mobx-react';
 class Home extends Component {
 
   componentDidMount() {
+    this.props.GenralStore.home = this.refs.Home
     const height = this.refs.Home.offsetTop*6;
     this.props.GenralStore.HomeHeight = height
     this.props.GenralStore.isLoaded = true;
@@ -14,6 +15,10 @@ class Home extends Component {
 
   jumpToContact = () => window.scrollTo(0, this.props.GenralStore.projectsHeight)
   render() {
+    if(this.props.GenralStore.home){
+      console.log(this.props.GenralStore.home.offsetHeight)
+    }
+    
     return (
       <div className="Home" ref="Home" >
             <div className="title">

@@ -22,12 +22,14 @@ class GenralStore {
     @observable HomeHeight
     @observable projectsHeight
     @observable isLoaded = false
+    @observable project
 
     @action changeColor() {
    
         if (window.scrollY < this.HomeHeight) {
             this.backgroundColor = '#00000063'
             this.changeActive('Home')
+            console.log(this.project.childNodes.length)
           } 
           
           else if(window.scrollY < this.projectsHeight ){

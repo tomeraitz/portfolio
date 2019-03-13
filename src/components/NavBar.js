@@ -9,7 +9,7 @@ class NavBar extends Component {
     listenScrollEvent = () => this.props.GenralStore.changeColor()
     handelClick = e => {
       if(e.target.id === 'Projects'){
-        window.scrollTo(0, this.props.GenralStore.HomeHeight);
+        this.props.GenralStore.project.scrollIntoView({block: 'start', behavior: 'smooth'});
       }
       else if(e.target.id === 'Home'){
         window.scrollTo(0, 0);
@@ -17,7 +17,7 @@ class NavBar extends Component {
       else{
         window.scrollTo(0, this.props.GenralStore.projectsHeight);
       }
-      this.props.GenralStore.changeActive(e.target.id)
+      // this.props.GenralStore.changeActive(e.target.id)
     }
     
     componentDidMount() {
@@ -26,7 +26,7 @@ class NavBar extends Component {
   render() {
     return (
       <div className="NavBar" style={{backgroundColor: this.props.GenralStore.backgroundColor}}>
-          <div><img alt="logo" src={logo} width="100%" height="100%"></img></div>
+          <div><img id="logo" alt="logo" src={logo} width="auto" height="auto"></img></div>
           {this.props.GenralStore.items.map(i => {
             return <div key={i.id} id={i.id} onClick={this.handelClick} className={i.className} >{i.id}</div>
           })}

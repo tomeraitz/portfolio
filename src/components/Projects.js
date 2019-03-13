@@ -8,6 +8,7 @@ import { observer, inject } from 'mobx-react';
 class Projects extends Component {
   componentDidMount() {
     let height = 0
+    this.props.GenralStore.project = this.refs.Projects
     if(window.screen.availWidth <= 600){
       height =  this.refs.Projects.offsetTop*25
     } 
@@ -16,9 +17,12 @@ class Projects extends Component {
     }
       this.props.GenralStore.projectsHeight = height
     }
+    
 
   render() {
+    let state = this.props.GenralStore
     const projects = this.props.ProjectStore.projects
+    state.changeActive('projects')
     return (
       <div className="Projects" ref="Projects">
       {projects.map(p => {
