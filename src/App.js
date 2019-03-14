@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import { observer } from 'mobx-react'
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 @observer
@@ -17,6 +18,7 @@ class App extends Component {
                   <Home />
                   <Projects />
                   <Contact />
+                  <Footer />
             </div>
         </div>
     );

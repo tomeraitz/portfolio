@@ -11,7 +11,7 @@ class Projects extends Component {
       this.props.GenralStore.Projects = this.refs.Projects
       window.screen.availWidth <= 600 ? 
       this.props.GenralStore.projectsHeight =  this.refs.Projects.offsetTop*25 :
-      this.props.GenralStore.projectsHeight = this.refs.Projects.offsetTop*20;
+      this.props.GenralStore.projectsHeight = this.refs.Projects.offsetTop*16;
   } 
 
   render() {

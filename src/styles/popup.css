@@ -1,4 +1,4 @@
-.joined-popup {
+.popup {
     position: absolute;
     top: 5%;
     background-color: #252525;
@@ -15,11 +15,13 @@
 h1 {
     color: white;
     text-transform: uppercase;
+    font-family: 'Abhaya Libre', serif;
     text-align: center;
 }
 
 h2 {
     color: white;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     margin: 0 auto;
 }

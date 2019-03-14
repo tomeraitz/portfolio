@@ -22,6 +22,7 @@ class GenralStore {
     @observable isLoaded = false
     @observable Projects
     @observable Home
+    @observable Contact
 
     @action changeColor() {
         if (window.scrollY === 0 || window.scrollY < this.HomeHeight) {

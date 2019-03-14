@@ -8,7 +8,7 @@ class Popup extends Component {
 
     render() {
         return (
-            <div className="joined-popup">
+            <div className="popup">
             <div className="check_mark">
                 <div className="sa-icon sa-success animate">
                     <span className="sa-line sa-tip animateSuccessTip"></span>

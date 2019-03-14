@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import '../styles/Contact.css';
 import { observer, inject } from 'mobx-react';
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaStackOverflow } from "react-icons/fa";
 import Popup from './PopUp';
 
-@inject('ContactStore')
+@inject('ContactStore', 'GenralStore')
 @observer
 
 class Contact extends Component {
+
+    componentDidMount() {
+        this.props.GenralStore.Contact = this.refs.Contact
+      }
 
       handleForm = e => this.props.ContactStore.sendTomail(e)
       handleFields = e => this.props.ContactStore.changeState(e)
@@ -17,32 +18,53 @@ class Contact extends Component {
       render() {
         let state = this.props.ContactStore
         return (
-            <div className="Contact">
-                <h1 className="formTitle">Contact Me</h1>
-                <div className="formDescription">If you want to contact me, 
-                                                  send me your details by filling up the form below or 
-                                                  send an email to tomeraitz1@gmail.com
-                </div>
-                <div data-aos="flip-up">
-                    <input className="inputSmall" type="text" id="name" placeholder="Your Name" name="name" value={state.name} onChange={this.handleFields} />
-                    <input className="inputSmall" type="email" id="email" placeholder="Your Email" name="email" value={state.email} onChange={this.handleFields} />
-                    <input className="inputSmall" type="number" id="phone" placeholder="Your Phone" name="phone" value={state.phone}  onChange={this.handleFields} />
-                    <textarea className="inputBig" type="text"  name="message" placeholder="Message" id="message" value={state.message}  onChange={this.handleFields}></textarea>
-                    <div className="formDescription">{state.error}</div>
-                    <button onClick={this.handleForm}  type="submit" className="send">Send</button>
-                    {state.ispopUp? <Popup /> : null}
-                </div>
-                <div className="social">
-                    <h1 className="formTitle">Find Me On Social Media</h1>
-                    <div className="formDescription">Follow my online on 
-                                                    Linkedin, GitHub and StackOverFlow.
+            <div className="contact" ref="Contact">
+                <div className="form">
+                    <h1 className="form-title">Contact Me</h1>
+                    <div className="form-description">If you want to contact me, 
+                                                    send me your details by filling up the form below or 
+                                                    send an email to tomeraitz1@gmail.com
                     </div>
-                    <div className="socialContiner">
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/tomer-raitz-13b64911b/" className="socailLinks Linkedin"><FaLinkedin />Linkedin</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/tomeraitz" className="socailLinks"><FaGithub />GitHub</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://stackoverflow.com/users/10055871/tomer-raitz" className="socailLinks StackOverFlow"><FaStackOverflow />StackOverFlow</a>
+
+                    <div className="form-details" data-aos="flip-up">
+                        <input className="input-small" 
+                            type="text" id="name" 
+                            placeholder="Your Name" 
+                            name="name" value={state.name} 
+                            onChange={this.handleFields} 
+                        />
+
+                        <input className="input-small" 
+                            type="email" 
+                            id="email" 
+                            placeholder="Your Email" 
+                            name="email" 
+                            value={state.email} 
+                            onChange={this.handleFields} 
+                        />
+
+                        <input className="input-small" 
+                                type="number" 
+                                id="phone" 
+                                placeholder="Your Phone" 
+                                name="phone" value={state.phone}  
+                                onChange={this.handleFields} 
+                        />
+
+                        <textarea className="input-big" 
+                                type="text"  
+                                name="message" 
+                                placeholder="Message" 
+                                id="message" 
+                                value={state.message}  
+                                onChange={this.handleFields}>
+                        </textarea>
+
+                        <div className="form-description">{state.error}</div>
+                            <button onClick={this.handleForm}  type="submit" className="send">Send</button>
+                            {state.ispopUp? <Popup /> : null}
+                        </div>
                     </div>
-                </div>
             </div>
         );
       }

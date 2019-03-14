@@ -1,0 +1,33 @@
+.footer{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #fab949;
+  }
+
+.footer-title{
+    font-size: 1.6em;
+}
+
+.footer-description{
+    font-size: 0.95em;
+}
+.socialContiner{
+    display: grid;
+    grid-template-columns: repeat(3, 1em);
+    justify-items: center;
+    grid-column-gap: 4em;
+    
+}
+.socailLinks{
+    display: grid;
+    justify-items: center;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 9px;
+    border: 1px solid white;
+
+}
