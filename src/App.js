@@ -5,24 +5,20 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import { observer } from 'mobx-react'
 import Contact from './components/Contact';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+
 
 @observer
 class App extends Component {
   render() {
     return (
-      <Router> 
-        <div className="App">
+        <div className="app">
             <NavBar />
             <div className="main">
-
-                  <Route  path={'*'} component={Home}/>
-                  <Route  path={'*'} component={Projects}/>
-                  <Route  path={'*'} component={Contact}/>
-
+                  <Home />
+                  <Projects />
+                  <Contact />
             </div>
         </div>
-      </Router>
     );
   }
 }

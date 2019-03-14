@@ -4,7 +4,7 @@ import '../styles/projects.css';
 class Label extends Component {
   render() {
     return (
-      <div className="Label">
+      <div className="label">
             {this.props.text}
       </div>
     );

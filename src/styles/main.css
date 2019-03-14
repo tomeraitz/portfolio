@@ -1,9 +1,10 @@
 .main{
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(36em, 2fr));
+    overflow-x: hidden;
   }
   
-  .Home{
+  .home{
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/web-design-2038872_960_720.jpg");
     display: grid;
     color: white;
@@ -18,49 +19,53 @@
     font-size: 3em;
     grid-row-start: 2;
     align-self: end;
-    font-weight: bold;
+    font-family: 'Abhaya Libre', serif;
     justify-self: center;
     width: 82%;
     animation: fadein 4s;
-    -moz-animation: fadein 4s; /* Firefox */
-    -webkit-animation: fadein 4s; /* Safari and Chrome */
-    -o-animation: fadein 4s; /* Opera */
+    -moz-animation: fadein 4s; 
+    -webkit-animation: fadein 4s; 
+    -o-animation: fadein 4s;
     
   }
   
-  .des{
-    font-size: 1.5em;
+  .description{
+    font-size: 1.2em;
     text-size-adjust: auto;
     grid-row-start: 3;
     justify-self: center;
     width: 82%;
+    font-family: 'Montserrat', sans-serif;
     animation: fadein 4s;
-    -moz-animation: fadein 4s; /* Firefox */
-    -webkit-animation: fadein 4s; /* Safari and Chrome */
-    -o-animation: fadein 4s; /* Opera */
+    -moz-animation: fadein 4s; 
+    -webkit-animation: fadein 4s; 
+    -o-animation: fadein 4s; 
   }
   
-  .buttonContact{
+  .button-contact{
     font-size: 1.5em;
-    background-color: #fab949;
+    background-color: transparent;
     grid-row-start: 4;
     color: white;
     justify-self: center;
     border-radius: 12px;
-    border: none;
+    border: 1px solid #fab949;
+    color: #fab949;
     width: 9em;
     height: 2em;
+    font-family: 'Abhaya Libre', serif;
     text-align: center;
     cursor: pointer;
+    outline: none;
     animation: fadein 4s;
-    -moz-animation: fadein 4s; /* Firefox */
-    -webkit-animation: fadein 4s; /* Safari and Chrome */
-    -o-animation: fadein 4s; /* Opera */
+    -moz-animation: fadein 4s; 
+    -webkit-animation: fadein 4s; 
+    -o-animation: fadein 4s; 
   }
   
-  .buttonContact:hover{
-    background-color: #00000063;
-    color: #fab949;
+  .button-contact:hover{
+    background-color: #fab949;
+    color: white;
   }
 
 @keyframes fadein {
@@ -71,7 +76,8 @@
         opacity:1;
     }
 }
-@-moz-keyframes fadein { /* Firefox */
+
+@-moz-keyframes fadein { 
     from {
         opacity:0;
     }
@@ -79,7 +85,8 @@
         opacity:1;
     }
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
+
+@-webkit-keyframes fadein { 
     from {
         opacity:0;
     }
@@ -87,7 +94,8 @@
         opacity:1;
     }
 }
-@-o-keyframes fadein { /* Opera */
+
+@-o-keyframes fadein { 
     from {
         opacity:0;
     }

@@ -4,59 +4,53 @@ import 'aos/dist/aos.css';
 
 
 class GenralStore {
-    @observable backgroundColor
     @observable active = 'Home'
     @observable items = [{
                             id : 'Home',
-                            className: "NavItems active",
+                            className: "nav-items active",
                         }, 
                         {
                             id: 'Projects',
-                            className: "NavItems",
+                            className: "nav-items",
                         } ,  
                         {
                             id: 'Contact',
-                            className: "NavItems",
-                        }
-                        ]
+                            className: "nav-items",
+                        }]
     @observable HomeHeight
     @observable projectsHeight
     @observable isLoaded = false
-    @observable project
+    @observable Projects
+    @observable Home
 
     @action changeColor() {
-   
-        if (window.scrollY < this.HomeHeight) {
-            this.backgroundColor = '#00000063'
+        if (window.scrollY === 0 || window.scrollY < this.HomeHeight) {
             this.changeActive('Home')
-            console.log(this.project.childNodes.length)
           } 
           
-          else if(window.scrollY < this.projectsHeight ){
-            this.backgroundColor = '#00000063'
+          else if(window.scrollY < this.projectsHeight &&  window.scrollY > this.HomeHeight){
             this.changeActive('Projects')
           }
           else {
-            this.backgroundColor = '#00000063'
             this.changeActive('Contact')
         }
     }
 
     @action whatIsActive(){
         this.items.forEach(i => {
-            if(i.id === this.active){
-                i.className = "NavItems active"
-            }
-            else{
-                i.className = "NavItems"
-            }
+            i.id === this.active ? i.className = "nav-items active" : i.className = "nav-items"
         })
- 
     }
 
     @action changeActive(id){
         this.active = id
         this.whatIsActive()
+    }
+
+    @action jumpto(id){
+        id === 'Home' ? this.Home.scrollIntoView({block: 'start', behavior: 'smooth'}) : 
+        id === 'Projects' ? this.Projects.scrollIntoView({block: 'start', behavior: 'smooth'}) :
+        this.Contact.scrollIntoView({block: 'start', behavior: 'smooth'})
     }
 }
 AOS.init();
