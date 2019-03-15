@@ -28,7 +28,7 @@ class ContactStore {
                 setTimeout(() =>  this.ispopUp = false,3000)
               })
               .catch(error =>{
-                this.messageTitle = 'Error!'
+                this.messageTitle = 'Error!!'
                 this.messageTitle2 = `Message Wasn't sent`
                 this.ispopUp = true
                 setTimeout(() =>  this.ispopUp = false,3000)
