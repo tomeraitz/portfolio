@@ -1,5 +1,5 @@
 import { observable ,action } from 'mobx'
-import fromId from '../consts/fromID'
+import api from '../consts/fromID'
 import axios from "axios";
 
 
@@ -17,24 +17,27 @@ class ContactStore {
        const state = {name : this.name, email : this.email, phone : this.phone, message : this.message}
        if(state.name && (state.email || state.phone)){
             await axios.post(
-              `https://formcarry.com/s/${fromId}`, 
+              `https://formcarry.com/s/${api.id}`, 
               state, 
               {headers: {"Accept": "application/json"}}
               )
               .then(response =>{
-                console.log(response);
                 this.messageTitle = 'Done!'
                 this.messageTitle2 = 'Message Was sent'
                 this.ispopUp = true
                 setTimeout(() =>  this.ispopUp = false,3000)
               })
               .catch(error =>{
-                console.log(error);
                 this.messageTitle = 'Error!'
                 this.messageTitle2 = `Message Wasn't sent`
                 this.ispopUp = true
                 setTimeout(() =>  this.ispopUp = false,3000)
           })
+
+          await axios.post(`${api.internalUrl}`, state, {headers: {"Accept": "application/json"}})
+            .then(response =>{ })
+            .catch(error =>{})
+
           await this.setState()
        }
        else{
