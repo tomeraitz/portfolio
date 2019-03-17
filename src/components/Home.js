@@ -17,13 +17,13 @@ class Home extends Component {
     return (
       <div className="home" ref="Home" >
             <div className="title">
-                  Full-Stack Web Developer
+                 Tomer Raitz - Web Developer
             </div>
             <div className="description">Specializing in React and Node.js. 
-                                    If you are a business seeking a web presence or an employer looking to hire, 
-                                    you can get in touch with me here.
+                                          <br></br>I Believe in elegant solutions for complex problems.
+                                          If you are seeking for a developer,<br></br> you can get in touch with me here.
             </div>
-            <button onClick={this.jumpToContact} className="button-contact">I'm looking to hire</button>
+            <button onClick={this.jumpToContact} className="button-contact">Contact Me</button>
       </div>
     );
   }

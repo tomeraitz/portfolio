@@ -18,7 +18,7 @@ const rickAndMorty = {
 
 const GoldRus = {
     title : "GoldRus Game",
-    text : "The nostalgic game 'Gold-Rush' for multiple players",
+    text : "The nostalgic 'Gold-Rush' game with multiplayer functionality",
     gitHub : "https://github.com/tomeraitz/GoldRush-game",
     url : "https://gold-rush-multi.herokuapp.com/",
     img : gold,
@@ -28,7 +28,7 @@ const GoldRus = {
 
 const MMS = {
     title : "MMS-GAP",
-    text : "MMS-GAP is an information system for integrating the patient progress information between patients, doctors, trainers, and nutritionists",
+    text : "MMS-GAP is an information system that helps medical experts and their patients communicate",
     gitHub : "https://github.com/mms-gap/code",
     url : "http://avivbr.mtacloud.co.il/index",
     img : mmsI,
@@ -37,8 +37,8 @@ const MMS = {
 }
 
 const crm = {
-    title : "CRM System",
-    text : "This project simulates a real CRM system",
+    title : "ORM-CRM",
+    text : "ORM-CRM helps small businesses manage their clients using advanced analytical tools",
     gitHub : "https://github.com/tomeraitz/React-FullStack-CRM-System",
     url : "https://crm-tomer.herokuapp.com",
     img : crmI,
@@ -47,8 +47,8 @@ const crm = {
 }
 
 const quiz = {
-    title : "Quiz Your Self",
-    text : "This Application quiz that checks what professions that fit you according to your answers",
+    title : "My Future Profession",
+    text : "A quiz that will help young adults find their future profession",
     gitHub : "https://github.com/tomeraitz/PHP-Quiz-Your-self",
     url : "http://avivbr.mtacloud.co.il/QuizYourSelf/register.php",
     img : quizI,
@@ -58,7 +58,7 @@ const quiz = {
 
 const doggies = {
     title : "Doogies",
-    text : "Dog parks based social network",
+    text : "A Social network for dogs and their humans",
     gitHub : "https://github.com/tomeraitz/doggies",
     url : "https://doggies-app.herokuapp.com",
     img : doggiesI,
@@ -68,13 +68,14 @@ const doggies = {
 
 const frog = {
     title : "Catch a Frog Game",
-    text : "'catch A frog' is a game whose entire logic is based on a coordinate system, the game have a countdown and levels engine",
+    text : "The classic 'catch A frog' game with a levels engine",
     gitHub : "https://github.com/tomeraitz/catchAfrog-game",
     url : "https://tomeraitz.github.io/catchAfrog-game/index.html",
     img : frogI,
     labels : ['vanilla js', 'Jquery','handlebar'],
     animation : "fade-right"
 }
-const projects = [rickAndMorty, GoldRus , MMS, crm , quiz , doggies, frog]
+const projects = [rickAndMorty, crm  , MMS, GoldRus , quiz , doggies, frog]
 
 export default projects
+

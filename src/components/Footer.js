@@ -10,7 +10,7 @@ class Footer extends Component {
         return (
                 <div className="footer" ref="Footer">
                     <h1 className="form-title footer-title">Find Me On Social Media</h1>
-                    <div className="form-description footer-description">Follow my online on 
+                    <div className="form-description footer-description">Follow me online on 
                                                     Linkedin, GitHub and StackOverFlow.
                     </div>
                     <div className="socialContiner">
