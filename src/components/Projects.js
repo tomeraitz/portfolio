@@ -10,16 +10,18 @@ class Projects extends Component {
   componentDidMount() {
       this.props.GenralStore.Projects = this.refs.Projects
       window.screen.availWidth <= 600 ? 
-      this.props.GenralStore.projectsHeight =  this.refs.Projects.offsetTop*25 :
-      this.props.GenralStore.projectsHeight = this.refs.Projects.offsetTop*16;
+      this.props.GenralStore.projectsHeight =  this.refs.Projects.offsetTop*19.5 :
+      this.props.GenralStore.projectsHeight = this.refs.Projects.offsetTop*8;
   } 
 
   render() {
     const projects = this.props.ProjectStore.projects
 
     return (
-      <div className="projects" ref="Projects">
+      <div>
       <h1 className="projects-title">projects</h1>
+      <div className="projects" ref="Projects">
+      
 
               {projects.map(p => {
        return  <div data-aos={p.animation} className="box" key={p.title}>
@@ -52,7 +54,7 @@ class Projects extends Component {
                 </div>
             })} 
       </div>
-    );
+    </div>);
   }
 }
 

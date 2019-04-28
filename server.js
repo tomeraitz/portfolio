@@ -27,7 +27,14 @@ if (process.env.PORT)//for production enviroment
 else// for dev enviroment
 {
   console.log('dev')
+
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  })
+  
   app.use(function (req, res, next) {
+    
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
