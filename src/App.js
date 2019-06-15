@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import { observer, inject } from 'mobx-react'
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LoadPage from './components/LoadPage';
 
 @inject('GenralStore')
 @observer
@@ -30,9 +31,7 @@ class App extends Component {
     }
     else{
       return (
-        <div className="load-app">
-            Loading...
-        </div>
+          <LoadPage />
     );
     }
 
