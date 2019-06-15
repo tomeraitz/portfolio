@@ -15,7 +15,7 @@ class App extends Component {
     this.props.GenralStore.checkWithServer();
   }
   render() {
-    if(this.props.GenralStore.loadApp === "appStarted"){
+    if(this.props.GenralStore.loadApp){
         return (
           <div className="app">
               <NavBar />

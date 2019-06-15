@@ -30,8 +30,9 @@ class GenralStore {
     @action async checkWithServer(){
         await axios.get(`${api.sendToMail}`)
         .then(response =>{
-            console.log("response from server", response.data)
-            this.loadApp = response.data
+            console.log("response from server", response)
+            this.loadApp = JSON.stringify({response})
+            
          })
         .catch(error =>{})
      }
