@@ -13,8 +13,10 @@ import LoadPage from './components/LoadPage';
 
 class App extends Component {
   componentDidMount(){
-    this.props.GenralStore.checkWithServer();
+    setTimeout(this.loadApp,3000)
   }
+
+  loadApp =() => this.props.GenralStore.checkWithServer()
   render() {
     if(this.props.GenralStore.loadApp){
         return (

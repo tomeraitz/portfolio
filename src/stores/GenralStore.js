@@ -27,6 +27,8 @@ class GenralStore {
     @observable Contact
     @observable loadApp = ''
 
+
+                        
     @action async checkWithServer(){
         await axios.get(`${api.sendToMail}`)
         .then(response =>{
