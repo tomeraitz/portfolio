@@ -3,25 +3,39 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-
+@inject('GenralStore')
 @observer
+
 class App extends Component {
+  componentDidMount(){
+    this.props.GenralStore.checkWithServer();
+  }
   render() {
-    return (
-        <div className="app">
-            <NavBar />
-            <div className="main">
-                  <Home />
-                  <Projects />
-                  <Contact />
-                  <Footer />
-            </div>
+    if(this.props.GenralStore.loadApp === "appStarted"){
+        return (
+          <div className="app">
+              <NavBar />
+              <div className="main">
+                    <Home />
+                    <Projects />
+                    <Contact />
+                    <Footer />
+              </div>
+          </div>
+      );
+    }
+    else{
+      return (
+        <div className="load-app">
+            Loading...
         </div>
     );
+    }
+
   }
 }
 

@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
 
+router.get('/appStarted', function (req, res) {
+    res.send("appStarted")
+})
+
 
 
 router.get('/users', function (req, res) {

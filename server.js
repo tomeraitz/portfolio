@@ -28,11 +28,6 @@ else// for dev enviroment
 {
   console.log('dev')
 
-  app.use(express.static(path.join(__dirname, 'build')));
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  })
-  
   app.use(function (req, res, next) {
     
     res.header('Access-Control-Allow-Origin', '*')
@@ -41,6 +36,13 @@ else// for dev enviroment
     res.header('Access-Control-Allow-Credentials', true);
     next()
   })
+
+  // app.use(express.static(path.join(__dirname, 'build')));
+  // app.get('*', function (req, res) {
+  //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  // })
+  
+
 }
 
 app.use('/', api)

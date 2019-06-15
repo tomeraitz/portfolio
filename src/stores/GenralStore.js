@@ -1,6 +1,8 @@
 import { observable, action } from 'mobx'
 import AOS from 'aos';
+import api from '../consts/fromID'
 import 'aos/dist/aos.css';
+import axios from "axios";
 
 
 class GenralStore {
@@ -23,6 +25,16 @@ class GenralStore {
     @observable Projects
     @observable Home
     @observable Contact
+    @observable loadApp = ''
+
+    @action async checkWithServer(){
+        await axios.get(`${api.sendToMail}`)
+        .then(response =>{
+            console.log("response from server", response.data)
+            this.loadApp = response.data
+         })
+        .catch(error =>{})
+     }
 
     @action changeColor() {
         if (window.scrollY === 0 || window.scrollY < this.HomeHeight) {
