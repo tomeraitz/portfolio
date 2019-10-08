@@ -1,53 +1,97 @@
-// Server setup
-const express = require('express')
-const app = express()
-const path = require('path')
-const api = require('./server/routes/api')
-const bodyParser = require('body-parser')
+const Api = require('./server/routes/api');
 
-// Mongoose setup
-const mongoose = require('mongoose')
-mongoose.connect(process.env.CONNECTION_STRING|| 'mongodb://localhost/tomerDB', { useNewUrlParser: true })
+class Server {
+  constructor() {
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-const port =process.env.PORT || 8000
+    // Server setup
+    this.express = require('express');
+    this.app = this.express();
+    this.path = require('path');
+    this.apiRouters = this.express.Router();
+    this.api = {};
+    this.bodyParser = require('body-parser');
+    this.port = 0;
 
-
-
-
-if (process.env.PORT)//for production enviroment
-{
-  console.log('production')
-  app.use(express.static(path.join(__dirname, 'build')));
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  })
-}
-else// for dev enviroment
-{
-  console.log('dev')
-
-  app.use(function (req, res, next) {
+    // Mongoose setup
+    this.mongoose = require('mongoose');
     
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
-    res.header('Access-Control-Allow-Credentials', true);
-    next()
-  })
+  }
 
-  // app.use(express.static(path.join(__dirname, 'build')));
-  // app.get('*', function (req, res) {
-  //   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  // })
-  
+  activeMongoConncetion() {
+    this.mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost:27017/tomerDB', {
+      useNewUrlParser: true
+    });
+  }
+
+  startExpressConfig(){
+    this.app.use(this.bodyParser.urlencoded({extended: false}));
+    this.app.use(this.bodyParser.json());
+    process.env.PORT ? this.port = process.env.PORT : this.port = 8000
+    
+  }
+
+  findPort(){
+    if (process.env.PORT) //for production enviroment
+    {
+      console.log('production')
+      this.app.use(this.express.static(this.path.join(__dirname, 'build')));
+      this.app.get('*',  (req, res)=> {
+        res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
+      })
+    } 
+    
+    else // for dev enviroment
+    {
+      console.log('dev')
+    
+      this.app.use( (req, res, next)=> {
+        res.header('Access-Control-Allow-Origin', '*')
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
+        res.header('Access-Control-Allow-Credentials', true);
+        next()
+      })
+
+
+    }
+  }
+
+  activeApi(){
+    this.api = new Api(this.apiRouters , this.path);
+    this.app.use('/', this.apiRouters);
+    this.api.appStarted();
+    this.api.getUsers();
+    this.api.addUser();
+  }
+
+  addAppLister(){
+    console.log(" this.port : ", this.port)
+    this.app.listen(this.port, ()=> {
+      console.log(`Running on port ${this.port}`)
+    })
+  }
+
+  activeteServer(){
+    this.activeMongoConncetion();
+    this.startExpressConfig();
+    this.findPort();
+    this.activeApi();
+    this.addAppLister();
+  }
 
 }
 
-app.use('/', api)
+const server = new Server();
+server.activeteServer();
 
 
-app.listen(port, function () {
-    console.log(`Running on port ${port}`)
-})
+
+
+
+
+
+
+
+
+
+

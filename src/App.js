@@ -13,10 +13,9 @@ import LoadPage from './components/LoadPage';
 
 class App extends Component {
   componentDidMount(){
-    setTimeout(this.loadApp,3000)
+    window.addEventListener('load', this.props.GenralStore.handleLoad());
   }
 
-  loadApp =() => this.props.GenralStore.checkWithServer()
   render() {
     if(this.props.GenralStore.loadApp){
         return (

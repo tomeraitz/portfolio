@@ -68,6 +68,11 @@ class GenralStore {
         id === 'Projects' ? this.Projects.scrollIntoView({block: 'start', behavior: 'smooth'}) :
         this.Contact.scrollIntoView({block: 'start', behavior: 'smooth'})
     }
+
+    @action handleLoad(){
+        console.log("loaded")
+        this.checkWithServer()
+      }
 }
 AOS.init();
 
