@@ -10,6 +10,7 @@ class Contact extends Component {
 
     componentDidMount() {
         this.props.GenralStore.Contact = this.refs.Contact
+        this.props.GenralStore.Contact.scrollTop = this.props.GenralStore.Contact.offsetTop;
       }
 
       handleForm = e => this.props.ContactStore.sendTomail(e)

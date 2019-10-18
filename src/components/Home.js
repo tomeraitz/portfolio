@@ -8,7 +8,7 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.GenralStore.Home = this.refs.Home
-    this.props.GenralStore.HomeHeight = this.refs.Home.offsetTop*6;
+    this.props.GenralStore.Home.scrollTop = this.props.GenralStore.Home.offsetTop;
   }
 
   jumpToContact = () => this.props.GenralStore.jumpto('Contact')

@@ -8,13 +8,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadPage from './components/LoadPage';
 
-@inject('GenralStore')
+@inject('GenralStore' , 'ProjectStore')
 @observer
 
 class App extends Component {
   componentDidMount(){
-    window.addEventListener('load', this.props.GenralStore.handleLoad());
+    setTimeout(this.addEventListenerLoad , 3000)
   }
+
+  addEventListenerLoad = () => window.addEventListener('load', this.props.GenralStore.handleLoad());
 
   render() {
     if(this.props.GenralStore.loadApp){

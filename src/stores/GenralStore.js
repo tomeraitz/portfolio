@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx'
+import { observable, action, toJS } from 'mobx'
 import AOS from 'aos';
 import api from '../consts/fromID'
 import 'aos/dist/aos.css';
@@ -7,6 +7,7 @@ import axios from "axios";
 
 class GenralStore {
     @observable active = 'Home'
+    @observable activeClassNa = "nav-bar regularSection"
     @observable items = [{
                             id : 'Home',
                             className: "nav-items active",
@@ -22,15 +23,15 @@ class GenralStore {
     @observable HomeHeight
     @observable projectsHeight
     @observable isLoaded = false
-    @observable Projects
-    @observable Home
-    @observable Contact
+    @observable Projects = {}
+    @observable Home = {};
+    @observable Contact = {}
     @observable loadApp = ''
 
 
                         
     @action async checkWithServer(){
-        await axios.get(`${api.sendToMail}`)
+        await axios.get(`http://localhost:8000${api.sendToMail}`)
         .then(response =>{
             console.log("response from server", response)
             this.loadApp = JSON.stringify({response})
@@ -39,16 +40,22 @@ class GenralStore {
         .catch(error =>{})
      }
 
-    @action changeColor() {
-        if (window.scrollY === 0 || window.scrollY < this.HomeHeight) {
-            this.changeActive('Home')
+    @action changeColor(scrollCloseDescription) {
+        if (window.scrollY >= this.Home.offsetTop && window.scrollY < this.Projects.offsetTop - 30) {
+            this.activeClassNa = "nav-bar regularSection"
+            this.changeActive('Home');
+            if(window.scrollY < this.Projects.offsetTop -300) scrollCloseDescription() 
+            
           } 
           
-          else if(window.scrollY < this.projectsHeight &&  window.scrollY > this.HomeHeight){
+          else if(window.scrollY >= this.Projects.offsetTop- 30 && window.scrollY < this.Contact.offsetTop -50 ){
+            this.activeClassNa = "nav-bar blackSection"
             this.changeActive('Projects')
           }
-          else {
+          else if(window.scrollY >= this.Contact.offsetTop -50) {
+            this.activeClassNa = "nav-bar regularSection"
             this.changeActive('Contact')
+            scrollCloseDescription();
         }
     }
 

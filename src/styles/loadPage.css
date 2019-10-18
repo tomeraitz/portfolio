@@ -9,11 +9,15 @@
 
 .load-box{
     display: grid;
-    width: 60%;
-    height: 60%;
-    grid-template-rows: 90% 10%;
+    grid-template-rows: 80% 5%;
     justify-items: center;
     align-items: center;
+}
+
+img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spinner {

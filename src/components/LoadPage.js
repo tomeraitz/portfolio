@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { observer, inject } from 'mobx-react';
 import '../styles/loadPage.css'
 import logo from '../images/Tomer Raitz.png'
 
@@ -9,7 +8,7 @@ class LoadPage extends Component {
         return (
             <div className="load-app">
                 <div className="load-box">
-                    <img src={logo} width="85%" height="100%" />
+                    <img src={logo} alt="logIn-logo" width="100%" height="auto" />
                     <div className="spinner">
                         <div className="bounce1"></div>
                         <div className="bounce2"></div>
