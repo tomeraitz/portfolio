@@ -31,7 +31,6 @@
 
 #ProjectCards {
     display: grid;
-    cursor: pointer;
     width: 90%;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -39,7 +38,6 @@
 
 #ProjectCards-2-items {
     display: grid;
-    cursor: pointer;
     width: 90%;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
@@ -108,7 +106,7 @@
 
 .projects-label-des {
     position: relative;
-    font-size: 1em;
+    font-size: 0.8em;
     width: 4.3rem;
     height: 1rem;
     color: #fab949;
@@ -124,7 +122,7 @@
 
 .projects-label-des-clor {
     position: relative;
-    font-size: 1em;
+    font-size: 0.8em;
     width: 4.3rem;
     height: 1rem;
     border: 1px solid #fab949;
@@ -153,6 +151,7 @@
     background-color: black;
     border: none;
     border-radius: 9px;
+    cursor: pointer;
 }
 
 

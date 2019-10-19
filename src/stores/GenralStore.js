@@ -1,4 +1,4 @@
-import { observable, action, toJS } from 'mobx'
+import { observable, action } from 'mobx'
 import AOS from 'aos';
 import api from '../consts/fromID'
 import 'aos/dist/aos.css';
@@ -31,9 +31,9 @@ class GenralStore {
 
                         
     @action async checkWithServer(){
-        await axios.get(`http://localhost:8000${api.sendToMail}`)
+        await axios.get(`${api.sendToMail}`)
         .then(response =>{
-            console.log("response from server", response)
+            // console.log("response from server", response)
             this.loadApp = JSON.stringify({response})
             
          })
@@ -77,7 +77,7 @@ class GenralStore {
     }
 
     @action handleLoad(){
-        console.log("loaded")
+        // console.log("loaded")
         this.checkWithServer()
       }
 }

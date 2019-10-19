@@ -34,7 +34,7 @@ class ContactStore {
                 setTimeout(() =>  this.ispopUp = false,3000)
           })
 
-          await axios.post(`http://localhost:8000${api.internalUrl}`, state, {headers: {"Accept": "application/json"}})
+          await axios.post(`${api.internalUrl}`, state, {headers: {"Accept": "application/json"}})
             .then(response =>{ })
             .catch(error =>{})
 
