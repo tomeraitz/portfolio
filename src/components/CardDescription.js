@@ -11,7 +11,7 @@ class CardDescription extends Component {
         return (
             <div className={`card-description card-description-disply-${this.props.item.cssDescription}`}>
               <div className="close-description-phon" 
-              onTouchStart={(e)=>{
+              onTouchEnd={(e)=>{
                 if(projects[this.props.item.id].cssDescription == "block"){
                   closeDescriptionPhone(e,this.props.item.id)
                 } 

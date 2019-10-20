@@ -17,7 +17,10 @@ class Projects extends Component {
   render() {
 
     return (
-      <div className="projects" ref="Projects">
+      <div className="projects" 
+          onTouchMove={()=>this.props.ProjectStore.cantStartTouch()} 
+          onTouchStart={()=>this.props.ProjectStore.canStartTouch()}  
+          ref="Projects">
         <br></br>
         <br></br>
         <h1 className="projects-title">projects</h1>

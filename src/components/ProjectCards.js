@@ -17,7 +17,7 @@ class ProjectCards extends Component {
                        data-aos={item.animation} key={item.title} 
                        onMouseMove={()=>openDescription(index)}
                        onMouseLeave={()=>closeDescription(index)}
-                       onTouchStart={(e)=>openDescriptionPhone(e, index)}
+                       onTouchEnd={(e)=>openDescriptionPhone(e, index)}
                        >
                       <CardDescription item={item} />
                       <img src={item.img} alt={item.title} width="100%" height="100%" />

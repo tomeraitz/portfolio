@@ -47,6 +47,7 @@ class ProjectStore {
     @observable isCanGoToUrl = false;
     @observable lastId = -1;
     @observable isCanCloseDes = {};
+    @observable isCanOpenDes = true
 
     @action handelResponsive(self) {
         let lastIndex = this.index
@@ -107,8 +108,8 @@ class ProjectStore {
 
     @action openDescriptionPhone = (e, id) => {
      
-        if(this.projects[id].cssDescription == "block" || window.innerWidth >= 700) return
-            if(this.projects[id].cssDescription == "none"){
+        if(this.projects[id].cssDescription == "block" && !this.isCanOpenDes) return
+            if(this.projects[id].cssDescription == "none" && this.isCanOpenDes){
                 console.log("In openDescriptionPhone");
                 if (this.lastId !== id) {
                     this.isCanGoToUrl = false;
@@ -125,15 +126,23 @@ class ProjectStore {
 
     @action closeDescriptionPhone = (e,id) => {
         console.log("In closeDescriptionPhone");
-        if(this.projects[id].cssDescription == "none" || window.innerWidth >= 700) return
+        if(this.projects[id].cssDescription == "none" && !this.isCanOpenDes) return
         var closeDes =()=>{
-            if(this.projects[id].cssDescription == "block"){
+            if(this.projects[id].cssDescription == "block" && this.isCanOpenDes){
                 this.projects[id].cssDescription = "none";
                 this.projects[id].cssDescriptionGrid = "none";
                 _self.forceUpdate();
             }
         }
         setTimeout(closeDes , 300)
+    }
+
+    @action cantStartTouch = () =>{
+        this.isCanOpenDes =false;
+    }
+
+    @action canStartTouch = () =>{
+        this.isCanOpenDes =true;
     }
 
     @action scrollCloseDescription = () => {
