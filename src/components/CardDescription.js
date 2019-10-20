@@ -7,9 +7,15 @@ import { FaGlobeAmericas } from "react-icons/fa";
 @inject('ProjectStore')
 class CardDescription extends Component {
   render() {
-    let {hoverLabel, hoverLeaveLabel, openUrl}  = this.props.ProjectStore
+    let {hoverLabel, hoverLeaveLabel, openUrl, closeDescriptionPhone, projects}  = this.props.ProjectStore
         return (
             <div className={`card-description card-description-disply-${this.props.item.cssDescription}`}>
+              <div className="close-description-phon" 
+              onTouchStart={(e)=>{
+                if(projects[this.props.item.id].cssDescription == "block"){
+                  closeDescriptionPhone(e,this.props.item.id)
+                } 
+              }}></div>
                 <h1 className="projects-title-des" style={{display : `${this.props.item.cssDescription}`}}>{this.props.item.title}</h1>
                 <p className="projects-details-des" style={{display : `${this.props.item.cssDescription}`}}>{this.props.item.text}</p>
                 <div className="projects-label-continer-des" 

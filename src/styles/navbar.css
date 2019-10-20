@@ -18,7 +18,7 @@
   .nav-items{
     justify-self: center;
     align-self: center;
-    font-size: 20px;
+    font-size: 136%;
     font-family: 'Abhaya Libre', serif;
     cursor: pointer;
   }
@@ -26,9 +26,6 @@
   .active{
     border-bottom: 5px solid #fab949;
   }
-
-
-  
   
   #logo{
     max-width: 30vw;

@@ -2,6 +2,7 @@ import projectsProtfolio from '../consts/projects'
 import {
     observable,
     action,
+    toJS,
 } from 'mobx'
 
 let _self;
@@ -45,6 +46,7 @@ class ProjectStore {
     @observable activeLabel = 'All'
     @observable isCanGoToUrl = false;
     @observable lastId = -1;
+    @observable isCanCloseDes = {};
 
     @action handelResponsive(self) {
         let lastIndex = this.index
@@ -103,23 +105,35 @@ class ProjectStore {
         _self.forceUpdate();
     }
 
-    @action openCloseDescriptionPhone = (id) => {
-        if (this.lastId !== id) {
-            this.isCanGoToUrl = false;
-            this.lastId = id
+    @action openDescriptionPhone = (e, id) => {
+     
+        if(this.projects[id].cssDescription == "block" || window.innerWidth >= 700) return
+            if(this.projects[id].cssDescription == "none"){
+                console.log("In openDescriptionPhone");
+                if (this.lastId !== id) {
+                    this.isCanGoToUrl = false;
+                    this.lastId = id
+    
+                    var openUrlTimeOut = () => this.isCanGoToUrl = true;
+                    setTimeout(openUrlTimeOut, 800);
+                }
+                this.projects[id].cssDescription = "block";
+                this.projects[id].cssDescriptionGrid = "grid";
+            }
+            _self.forceUpdate();
+    }
 
-            var openUrlTimeOut = () => this.isCanGoToUrl = true;
-            setTimeout(openUrlTimeOut, 500);
+    @action closeDescriptionPhone = (e,id) => {
+        console.log("In closeDescriptionPhone");
+        if(this.projects[id].cssDescription == "none" || window.innerWidth >= 700) return
+        var closeDes =()=>{
+            if(this.projects[id].cssDescription == "block"){
+                this.projects[id].cssDescription = "none";
+                this.projects[id].cssDescriptionGrid = "none";
+                _self.forceUpdate();
+            }
         }
-
-        this.projects.forEach(project => {
-            project.cssDescription = "none"
-            project.cssDescriptionGrid = "none"
-        })
-
-        this.projects[id].cssDescription = "block";
-        this.projects[id].cssDescriptionGrid = "grid";
-        _self.forceUpdate();
+        setTimeout(closeDes , 300)
     }
 
     @action scrollCloseDescription = () => {

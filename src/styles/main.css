@@ -8,7 +8,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/web-design-2038872_960_720.jpg");
     display: grid;
     color: white;
-    grid-template-rows: 13em 4em 14em 3em;
+    grid-template-rows: 10vh 20vh 30vh;
     height: 100vh;
     width: 100vw;
     background-position: center;
@@ -17,7 +17,7 @@
   }
   
   .title{
-    font-size: 3em;
+    font-size: 6vh;
     grid-row-start: 2;
     align-self: end;
     font-family: 'Abhaya Libre', serif;
@@ -31,7 +31,7 @@
   }
   
   .description{
-    font-size: 1.2em;
+    font-size: 2.8vh;
     text-size-adjust: auto;
     grid-row-start: 3;
     justify-self: center;

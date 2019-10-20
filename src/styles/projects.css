@@ -33,14 +33,14 @@
     display: grid;
     width: 90%;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
 }
 
 #ProjectCards-2-items {
     display: grid;
     width: 90%;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
 }
 
 .cardItem {
@@ -146,7 +146,7 @@
 }
 
 .projects-buttons {
-    width: 10rem;
+    width: 14vw;
     height: 2rem;
     background-color: black;
     border: none;
@@ -170,6 +170,14 @@
     color: #fab949;
 }
 
+.close-description-phon{
+    position: fixed;
+    z-index: 100;
+    margin-top: 0px;
+    height: 75%;
+    width: 100%;
+}
+
 @keyframes fade-in {
     from {
         height: 0%;
@@ -189,6 +197,16 @@
 
     to {
         height: 0%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    #ProjectCards {
+        grid-template-columns: repeat(auto-fill, minmax(31vw, 1fr));
+    }
+
+    .projects-buttons {
+        width: 19vw;
     }
 }
 

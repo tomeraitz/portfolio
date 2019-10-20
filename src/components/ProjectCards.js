@@ -8,7 +8,7 @@ import CardDescription from './CardDescription';
 class ProjectCards extends Component {
 
   render() {
-    let { projects, cssId, openDescription , closeDescription, openCloseDescriptionPhone} = this.props.ProjectStore
+    let { projects, cssId, openDescription , closeDescription, openDescriptionPhone} = this.props.ProjectStore
     return (
       <div id={cssId}>
         {projects.map((item,index) =>{
@@ -17,7 +17,7 @@ class ProjectCards extends Component {
                        data-aos={item.animation} key={item.title} 
                        onMouseMove={()=>openDescription(index)}
                        onMouseLeave={()=>closeDescription(index)}
-                       onTouchStart={()=>openCloseDescriptionPhone(index)}
+                       onTouchStart={(e)=>openDescriptionPhone(e, index)}
                        >
                       <CardDescription item={item} />
                       <img src={item.img} alt={item.title} width="100%" height="100%" />
