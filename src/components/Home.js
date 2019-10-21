@@ -19,8 +19,8 @@ class Home extends Component {
             <div className="title">
                  Tomer Raitz - Web Developer
             </div>
-            <div className="description">Specializing in React and Node.js. 
-                                          <br></br>I Believe in elegant solutions for complex problems.
+            <div className="description">Specializing in JavaScript and js frame works. 
+                                          <br></br>I believe in elegant solutions for complex problems.
                                           If you are seeking for a developer,<br></br> you can get in touch with me here.
             </div>
             <button onClick={this.jumpToContact} className="button-contact">Contact Me</button>

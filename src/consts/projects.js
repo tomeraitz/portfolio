@@ -109,7 +109,7 @@ const MMS = {
 
 const GoldRus = {
     id: 3,
-    title: "GoldRus Game",
+    title: "Gold-Rush Game",
     text: "The nostalgic 'Gold-Rush' game with multiplayer functionality",
     gitHub: "https://github.com/tomeraitz/GoldRush-game",
     url: "https://gold-rush-multi.herokuapp.com/",

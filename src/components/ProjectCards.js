@@ -14,7 +14,9 @@ class ProjectCards extends Component {
         {projects.map((item,index) =>{
           return (<div className="cardItem" 
                        ref={`cardItem${index}`}
-                       data-aos={item.animation} key={item.title} 
+                       data-aos={item.animation}
+                       data-aos-offset="0"  
+                       key={item.title} 
                        onMouseMove={()=>openDescription(index)}
                        onMouseLeave={()=>closeDescription(index)}
                        onTouchEnd={(e)=>openDescriptionPhone(e, index)}

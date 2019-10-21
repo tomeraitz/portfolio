@@ -141,6 +141,7 @@
     display: grid;
     grid-template-columns: repeat(2, 40%);
     grid-gap: 10%;
+    z-index: 10;
     justify-items: center;
     justify-content: center;
 }
@@ -172,11 +173,12 @@
 
 .close-description-phon{
     position: fixed;
-    z-index: 100;
+    z-index: 3;
     margin-top: 0px;
     height: 75%;
     width: 100%;
 }
+
 
 @keyframes fade-in {
     from {
