@@ -13,9 +13,7 @@ class Projects extends Component {
     this.props.ProjectStore.handelClickLabel('All', this);
   } 
   
-
   render() {
-
     return (
       <div className="projects" 
           onTouchMove={()=>this.props.ProjectStore.cantStartTouch()} 

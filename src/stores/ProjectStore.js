@@ -2,7 +2,6 @@ import projectsProtfolio from '../consts/projects'
 import {
     observable,
     action,
-    toJS,
 } from 'mobx'
 
 let _self;
@@ -38,8 +37,6 @@ class ProjectStore {
             text: 'WebSokect',
             class: 'label'
         },
-
-
     ];
     @observable index = window.innerWidth >= 768 ? 7 : 5;
     @observable counter = 0
@@ -49,21 +46,21 @@ class ProjectStore {
     @observable isCanCloseDes = {};
     @observable isCanOpenDes = true
 
+    // Responsive related the filter labels (big screen - 7 filters, small screen -5 filters)
     @action handelResponsive(self) {
         let lastIndex = this.index
         window.innerWidth >= 768 ? this.index = 7 : this.index = 5;
         if (lastIndex !== this.index) self.forceUpdate();
     }
 
+    // Show filters projects and current style
     @action handelClickLabel = (label, self) => {
         this.activeLabel = `${label}`;
         if (_self === undefined) _self = self
-
         this.labels.forEach(i => {
             i.text === `${label}` ? i.class = 'label active-label' : i.class = 'label'
         })
         this.projects = this.filterProjectes();
-
         if (window.innerWidth > 1065 && this.projects.length === 2) {
             this.cssId = 'ProjectCards-2-items'
         } else {
@@ -81,23 +78,20 @@ class ProjectStore {
         })
         return filtterArray
     }
-
+    // ============== Open Description on pc or phone ======================
     @action openDescription = (id) => {
         if (window.innerWidth >= 700) {
             if (this.lastId !== id) {
                 this.isCanGoToUrl = false;
                 this.lastId = id
-
                 var openUrlTimeOut = () => this.isCanGoToUrl = true;
                 setTimeout(openUrlTimeOut, 800);
             }
             this.projects[id].cssDescription = "block";
             this.projects[id].cssDescriptionGrid = "grid";
         }
-
         _self.forceUpdate();
     }
-
     @action closeDescription = (id) => {
         if (window.innerWidth >= 700) {
             this.projects[id].cssDescriptionGrid = "none";
@@ -105,11 +99,9 @@ class ProjectStore {
         }
         _self.forceUpdate();
     }
-
     @action openDescriptionPhone = (e, id) => {
-     
-        if(this.projects[id].cssDescription == "block" && !this.isCanOpenDes) return
-            if(this.projects[id].cssDescription == "none" && this.isCanOpenDes){
+        if(this.projects[id].cssDescription === "block" && !this.isCanOpenDes) return
+            if(this.projects[id].cssDescription === "none" && this.isCanOpenDes){
                 console.log("In openDescriptionPhone");
                 if (this.lastId !== id) {
                     this.isCanGoToUrl = false;
@@ -123,12 +115,11 @@ class ProjectStore {
             }
             _self.forceUpdate();
     }
-
     @action closeDescriptionPhone = (e,id) => {
         console.log("In closeDescriptionPhone");
-        if(this.projects[id].cssDescription == "none" && !this.isCanOpenDes) return
+        if(this.projects[id].cssDescription === "none" && !this.isCanOpenDes) return
         var closeDes =()=>{
-            if(this.projects[id].cssDescription == "block" && this.isCanOpenDes){
+            if(this.projects[id].cssDescription === "block" && this.isCanOpenDes){
                 this.projects[id].cssDescription = "none";
                 this.projects[id].cssDescriptionGrid = "none";
                 _self.forceUpdate();
@@ -136,15 +127,12 @@ class ProjectStore {
         }
         setTimeout(closeDes , 300)
     }
-
     @action cantStartTouch = () =>{
         this.isCanOpenDes =false;
     }
-
     @action canStartTouch = () =>{
         this.isCanOpenDes =true;
     }
-
     @action scrollCloseDescription = () => {
         this.projects.forEach(project => {
             project.cssDescription = "none"
@@ -152,6 +140,8 @@ class ProjectStore {
         })
         _self.forceUpdate();
     }
+
+    // ============== Open Description on pc or phone ======================
 
     @action hoverLabel = (id, index) => {
         this.projects[id].labels[index].cssClassHover = 'projects-label-des-clor';
@@ -164,12 +154,9 @@ class ProjectStore {
     }
 
     @action openUrl = (url, target) => {
-        // console.log("this.isCanGoToUrl : ", toJS(this.isCanGoToUrl))
         if (this.isCanGoToUrl) window.open(url, target);
         _self.forceUpdate();
     }
 
 }
-
-
 export default new ProjectStore()

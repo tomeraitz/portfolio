@@ -18,7 +18,6 @@ class LoadPage extends Component {
             </div>
         );
     }
-
 }
 
 export default LoadPage;

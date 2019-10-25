@@ -16,7 +16,7 @@ class App extends Component {
     setTimeout(this.addEventListenerLoad , 3000)
   }
 
-  addEventListenerLoad = () => window.addEventListener('load', this.props.GenralStore.handleLoad());
+  addEventListenerLoad = () => window.addEventListener('load', this.props.GenralStore.checkWithServer());
 
   render() {
     if(this.props.GenralStore.loadApp){

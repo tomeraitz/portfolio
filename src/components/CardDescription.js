@@ -12,7 +12,7 @@ class CardDescription extends Component {
             <div className={`card-description card-description-disply-${this.props.item.cssDescription}`}>
               <div className="close-description-phon" 
               onTouchEnd={(e)=>{
-                if(projects[this.props.item.id].cssDescription == "block"){
+                if(projects[this.props.item.id].cssDescription === "block"){
                   closeDescriptionPhone(e,this.props.item.id)
                 } 
               }}></div>
@@ -38,7 +38,6 @@ class CardDescription extends Component {
             </div>
             
           );
-
   }
 }
 

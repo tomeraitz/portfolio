@@ -2,7 +2,6 @@ const Api = require('./server/routes/api');
 
 class Server {
   constructor() {
-
     // Server setup
     this.express = require('express');
     this.app = this.express();
@@ -11,7 +10,6 @@ class Server {
     this.api = {};
     this.bodyParser = require('body-parser');
     this.port = 0;
-
     // Mongoose setup
     this.mongoose = require('mongoose');
     
@@ -27,11 +25,11 @@ class Server {
     this.app.use(this.bodyParser.urlencoded({extended: false}));
     this.app.use(this.bodyParser.json());
     process.env.PORT ? this.port = process.env.PORT : this.port = 8000
-    
   }
 
   findPort(){
-    if (process.env.PORT) //for production enviroment
+    //for production enviroment
+    if (process.env.PORT) 
     {
       console.log('production')
       this.app.use(this.express.static(this.path.join(__dirname, 'build')));
@@ -39,11 +37,9 @@ class Server {
         res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
       })
     } 
-    
-    else // for dev enviroment
+    // for dev enviroment
+    else 
     {
-      console.log('dev')
-    
       this.app.use( (req, res, next)=> {
         res.header('Access-Control-Allow-Origin', '*')
         res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
@@ -51,8 +47,6 @@ class Server {
         res.header('Access-Control-Allow-Credentials', true);
         next()
       })
-
-
     }
   }
 
@@ -65,7 +59,6 @@ class Server {
   }
 
   addAppLister(){
-    console.log(" this.port : ", this.port)
     this.app.listen(this.port, ()=> {
       console.log(`Running on port ${this.port}`)
     })
@@ -78,9 +71,7 @@ class Server {
     this.activeApi();
     this.addAppLister();
   }
-
 }
-
 const server = new Server();
 server.activeteServer();
 
