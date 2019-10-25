@@ -34,7 +34,7 @@ class GenralStore {
 
     // Check with server if the website is ready
     @action async checkWithServer() {
-        await axios.get(`${api.sendToMail}`)
+        await axios.get(`${process.env.REACT_APP_API_Mail}`)
             .then(response => {
                 this.loadApp = JSON.stringify({
                     response

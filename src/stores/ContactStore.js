@@ -17,7 +17,7 @@ class ContactStore {
        const state = {name : this.name, email : this.email, phone : this.phone, message : this.message}
        if(state.name && (state.email || state.phone)){
             await axios.post(
-              `https://formcarry.com/s/${api.id}`, 
+              `https://formcarry.com/s/${process.env.REACT_APP_API_ID}`, 
               state, 
               {headers: {"Accept": "application/json"}}
               )
@@ -34,7 +34,7 @@ class ContactStore {
                 setTimeout(() =>  this.ispopUp = false,3000)
           })
 
-          await axios.post(`${api.internalUrl}`, state, {headers: {"Accept": "application/json"}})
+          await axios.post(`${process.env.REACT_APP_API_INTERNAL_URL}`, state, {headers: {"Accept": "application/json"}})
             .then(response =>{ })
             .catch(error =>{})
 

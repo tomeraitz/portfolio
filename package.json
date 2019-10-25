@@ -20,6 +20,7 @@
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
+    "env-cmd": "^10.0.1",
     "eslint": "5.12.0",
     "eslint-config-react-app": "^3.0.7",
     "eslint-loader": "2.1.1",
@@ -70,11 +71,11 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev-start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "heroku-postbuild": "npm install --only=dev && npm install && npm run build"
+    "start": "env-cmd node server.js",
+    "dev-start": "env-cmd node scripts/start.js",
+    "build": "env-cmd node scripts/build.js",
+    "test": "env-cmd node scripts/test.js",
+    "heroku-postbuild": "env-cmd npm install --only=dev && npm install && npm run build"
   },
   "engines": {
     "npm": "6.4.1",
