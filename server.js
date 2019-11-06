@@ -9,6 +9,7 @@ class Server {
     this.apiRouters = this.express.Router();
     this.api = {};
     this.bodyParser = require('body-parser');
+    this.compression = require('compression');
     this.port = 0;
     // Mongoose setup
     this.mongoose = require('mongoose');
@@ -24,6 +25,7 @@ class Server {
   startExpressConfig(){
     this.app.use(this.bodyParser.urlencoded({extended: false}));
     this.app.use(this.bodyParser.json());
+    this.app.use(this.compression());
     process.env.PORT ? this.port = process.env.PORT : this.port = 8000
   }
 
