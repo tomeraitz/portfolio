@@ -34,7 +34,7 @@ class Server {
     if (process.env.PORT) 
     {
       console.log('production')
-      this.app.use(this.express.static(this.path.join(__dirname, 'build')));
+      this.app.use(this.express.static(this.path.join(__dirname, 'build', { maxAge: '1d' })));
       this.app.get('*',  (req, res)=> {
         res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
       })
