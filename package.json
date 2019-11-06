@@ -74,7 +74,6 @@
     "start": "env-cmd node server.js",
     "dev-start": "env-cmd node scripts/start.js",
     "build": "env-cmd node scripts/build.js",
-    "postbuild" : "zip -r portfolio.zip build",
     "test": "env-cmd node scripts/test.js",
     "heroku-postbuild": "env-cmd npm install --only=dev && npm install && npm run build"
   },
