@@ -30,7 +30,7 @@ class GenralStore {
     @observable Projects = {}
     @observable Home = {};
     @observable Contact = {}
-    @observable loadApp = 'afdsf'  
+    @observable loadApp = ''  
 
     // Check with server if the website is ready
     @action async checkWithServer() {
