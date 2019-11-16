@@ -34,8 +34,7 @@ class GenralStore {
 
     // Check with server if the website is ready
     @action async checkWithServer() {
-        console.log(" navigator.onLine : ", navigator.onLine)
-        if(navigator.onLine){
+        if(navigator.onLine && window.location.hostname !== 'localhost'){
             await axios.get(`${process.env.REACT_APP_API_Mail}`)
             .then(response => {
                 this.loadApp = JSON.stringify({

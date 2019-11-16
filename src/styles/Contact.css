@@ -36,6 +36,15 @@
     justify-items: center;
 }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .input-small{
     display: block;
     background-color: transparent;
@@ -52,6 +61,7 @@
 .input-big{
     display: block;
     background-color: transparent !important;
+    border-style: none;
     border: none;
     color: white;
     font-family: 'Abhaya Libre', serif;
@@ -61,7 +71,15 @@
     width: 100%;
     justify-content: start;
     text-align: start;
+
+    overflow: auto;
     outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
 }
 
 ::placeholder { 
