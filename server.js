@@ -34,8 +34,10 @@ class Server {
     if (process.env.PORT) 
     {
       console.log('production')
-      this.app.use(this.express.static(this.path.join(__dirname, 'build'), { maxAge: '1d' }));
+      this.app.use(this.express.static(this.path.join(__dirname, 'build')));
       this.app.get('*',  (req, res)=> {
+        res.setHeader("Cache-Control", "public, max-age=2592000");
+        res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
         res.sendFile(this.path.join(__dirname, 'build', 'index.html'));
       })
     } 
