@@ -34,7 +34,8 @@ class GenralStore {
 
     // Check with server if the website is ready
     @action async checkWithServer() {
-        await axios.get(`${process.env.REACT_APP_API_Mail}`)
+        if(navigator.onLine){
+            await axios.get(`${process.env.REACT_APP_API_Mail}`)
             .then(response => {
                 this.loadApp = JSON.stringify({
                     response
@@ -42,6 +43,11 @@ class GenralStore {
 
             })
             .catch(error => {})
+        }
+        else{
+            this.loadApp = 'redy'
+        }
+
     }
 
     // Change the navigation buttom color
