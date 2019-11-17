@@ -1,4 +1,4 @@
-# Portfolio  or Resume or CV
+# Portfolio
 This repo contains a portfolio resume that showcases examples of my work.
 It was created with React, Mobx, Node.js and CSS. Its is lightweight and fully responsive.
 
