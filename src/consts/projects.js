@@ -46,7 +46,7 @@ const crm = {
     title: "ORM-CRM",
     text: "ORM-CRM helps small businesses manage their clients using advanced analytical tools",
     gitHub: "https://github.com/tomeraitz/React-FullStack-CRM-System",
-    url: "https://crm-tomer.herokuapp.com",
+    url: "https://orm-crm.netlify.com/",
     target: "_blank",
     cssDescription: "none",
     cssDescriptionGrid: "none",
