@@ -3,7 +3,6 @@ import {
     action
 } from 'mobx'
 import AOS from 'aos';
-import api from '../consts/fromID'
 import 'aos/dist/aos.css';
 import axios from "axios";
 

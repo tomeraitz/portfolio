@@ -1,5 +1,4 @@
 import { observable ,action } from 'mobx'
-import api from '../consts/fromID'
 import axios from "axios";
 
 

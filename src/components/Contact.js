@@ -34,6 +34,7 @@ class Contact extends Component {
                             name="name" value={state.name} 
                             onChange={this.handleFields} 
                         />
+                        <label htmlFor="name"></label>
 
                         <input className="input-small" 
                             type="email" 
@@ -43,6 +44,7 @@ class Contact extends Component {
                             value={state.email} 
                             onChange={this.handleFields} 
                         />
+                        <label htmlFor="email"></label>
 
                         <input className="input-small" 
                                 type="number" 
@@ -51,6 +53,7 @@ class Contact extends Component {
                                 name="phone" value={state.phone}  
                                 onChange={this.handleFields} 
                         />
+                        <label htmlFor="phone"></label>
 
                         <textarea className="input-big" 
                                 type="text"  
@@ -60,6 +63,7 @@ class Contact extends Component {
                                 value={state.message}  
                                 onChange={this.handleFields}>
                         </textarea>
+                        <label htmlFor="message"></label>
 
                         <div className="form-description">{state.error}</div>
                             <button onClick={this.handleForm}  type="submit" className="send">Send</button>
