@@ -1,4 +1,4 @@
   
 # https://www.tomeraitz.com/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
