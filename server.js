@@ -77,7 +77,7 @@ class Server {
   }
 }
 const server = new Server();
-server.activeteServer();
+server.activeteServer();    
 
 
 
