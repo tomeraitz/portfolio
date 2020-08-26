@@ -76,6 +76,7 @@
     "dev-start": "node scripts/start.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js",
+    "postbuild": "cd ./build && gzip *.js && gzip *.css",
     "heroku-postbuild": "npm install --only=dev && npm install && npm run build"
   },
   "engines": {
@@ -148,5 +149,10 @@
     "presets": [
       "react-app"
     ]
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }
