@@ -1,11 +1,6 @@
 [build]
   functions = "functions"
   publish = "build"
-
-[build.environment]
-  GENERATE_SOURCEMAP = "true"
-[build.production.environment]
-  GENERATE_SOURCEMAP = "false"
   
 [[redirects]]
   from = "/*"
