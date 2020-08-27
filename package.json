@@ -147,10 +147,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "bit": {
-    "env": {},
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
   }
 }
