@@ -74,7 +74,7 @@
   "scripts": {
     "start": "node server.js",
     "dev-start": "node scripts/start.js",
-    "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
+    "build": "GENERATE_SOURCEMAP=false && node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "engines": {
