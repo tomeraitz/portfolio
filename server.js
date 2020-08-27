@@ -25,7 +25,7 @@ class Server {
   startExpressConfig(){
     this.app.use(this.bodyParser.urlencoded({extended: false}));
     this.app.use(this.bodyParser.json());
-    this.app.use(this.compression());
+    this.app.use(compression({ threshold: 0 }));
     process.env.PORT ? this.port = process.env.PORT : this.port = 8000
   }
 
