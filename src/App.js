@@ -1,42 +1,50 @@
-import React, { Component } from 'react';
+import React, { Component , Suspense ,lazy} from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import { observer, inject } from 'mobx-react'
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import LoadPage from './components/LoadPage';
 
+import { observer, inject } from 'mobx-react'
+import LoadPage from './components/LoadPage';
+const Main = lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/Main')), 5000);
+  });
+});
 @inject('GenralStore' , 'ProjectStore')
 @observer
 
 class App extends Component {
   componentDidMount(){
-    setTimeout(this.addEventListenerLoad , 3000)
+    // setTimeout(this.addEventListenerLoad , 6000)
+    this.props.GenralStore.checkWithServer();
   }
 
   addEventListenerLoad = () => window.addEventListener('load', this.props.GenralStore.checkWithServer());
 
   render() {
-    if(this.props.GenralStore.loadApp){
-        return (
-          <div className="app">
-              <NavBar />
-              <div className="main">
-                    <Home />
-                    <Projects />
-                    <Contact />
-                    <Footer />
-              </div>
-          </div>
-      );
-    }
-    else{
-      return (
-          <LoadPage />
-    );
-    }
+    return (
+      <div>
+        <Suspense fallback={<LoadPage />}>
+          <Main></Main>
+        </Suspense>
+       </div>
+    )
+    // if(this.props.GenralStore.loadApp){
+    //     return (
+          // <div className="app">
+          //     <NavBar />
+          //     <div className="main">
+          //           <Home />
+          //           <Projects />
+          //           <Contact />
+          //           <Footer />
+          //     </div>
+          // </div>
+    //   );
+    // }
+    // else{
+    //   return (
+    //       <LoadPage />
+    // );
+    // }
 
   }
 }
