@@ -28,15 +28,13 @@ class Contact extends Component {
                     </div>
 
                     <div className="form-details" data-aos="flip-up">
-                    <label htmlFor="name">
                         <input className="input-small" 
                             type="text" id="name" 
                             placeholder="Your Name" 
                             name="name" value={state.name} 
                             onChange={this.handleFields} 
                         />
-                        </label>
-                        <label htmlFor="email">
+                        <label htmlFor="name">Your Name</label>
                         <input className="input-small" 
                             type="email" 
                             id="email" 
@@ -45,8 +43,7 @@ class Contact extends Component {
                             value={state.email} 
                             onChange={this.handleFields} 
                         />
-                        </label>
-                        <label htmlFor="phone">
+                        <label htmlFor="email">Your Email</label>
                         <input className="input-small" 
                                 type="number" 
                                 id="phone" 
@@ -54,8 +51,7 @@ class Contact extends Component {
                                 name="phone" value={state.phone}  
                                 onChange={this.handleFields} 
                         />
-                        </label>
-                        <label htmlFor="message">
+                        <label htmlFor="phone">Your Phone</label>
                         <textarea className="input-big" 
                                 type="text"  
                                 name="message" 
@@ -64,7 +60,7 @@ class Contact extends Component {
                                 value={state.message}  
                                 onChange={this.handleFields}>
                         </textarea>
-                        </label>
+                        <label htmlFor="message">Message</label>
 
                         <div className="form-description">{state.error}</div>
                             <button onClick={this.handleForm}  type="submit" className="send">Send</button>

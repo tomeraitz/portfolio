@@ -30,6 +30,10 @@
     justify-items: center;
 }
 
+label{
+    font-size: 0;
+    height: 1px;
+}
 .form-details{
     display: grid;
     grid-gap: 30px;
