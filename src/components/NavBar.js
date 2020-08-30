@@ -11,7 +11,7 @@ class NavBar extends Component {
     handelClick = e => this.props.GenralStore.jumpto(e.target.id)
 
     componentDidMount() {
-      this.props.GenralStore.changeColor()
+      // this.props.GenralStore.changeColor()
       window.addEventListener('scroll', this.listenScrollEvent)
     }
 
