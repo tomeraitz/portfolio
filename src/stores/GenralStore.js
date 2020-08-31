@@ -2,8 +2,7 @@ import {
     observable,
     action
 } from 'mobx'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 import axios from "axios";
 
 
@@ -91,5 +90,5 @@ class GenralStore {
     }
 }
 
-AOS.init();
+
 export default new GenralStore()
