@@ -15,9 +15,7 @@ const Main = lazy(() => {
 
 class App extends Component {
   componentDidMount(){
-    // setTimeout(this.addEventListenerLoad , 6000)
     this.props.GenralStore.checkWithServer();
-    
   }
 
   addEventListenerLoad = () => window.addEventListener('load', this.props.GenralStore.checkWithServer());
@@ -30,25 +28,6 @@ class App extends Component {
         </Suspense>
        </div>
     )
-    // if(this.props.GenralStore.loadApp){
-    //     return (
-          // <div className="app">
-          //     <NavBar />
-          //     <div className="main">
-          //           <Home />
-          //           <Projects />
-          //           <Contact />
-          //           <Footer />
-          //     </div>
-          // </div>
-    //   );
-    // }
-    // else{
-    //   return (
-    //       <LoadPage />
-    // );
-    // }
-
   }
 }
 
