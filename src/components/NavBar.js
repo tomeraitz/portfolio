@@ -14,7 +14,9 @@ class NavBar extends Component {
     componentDidMount() {
       // this.props.GenralStore.changeColor()
       window.addEventListener('scroll', this.listenScrollEvent)
-      window.addEventListener('resize', this.props.GenralStore.setToDefault)
+      const ua = navigator.userAgent;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(ua);
+      if(!isMobile) window.addEventListener('resize', this.props.GenralStore.setToDefault);
     }
 
   render() {
