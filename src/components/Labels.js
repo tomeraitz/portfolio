@@ -26,7 +26,7 @@ class Labels extends Component {
                         </div>)
               }
               else{
-                return -1;
+                return ;
               }
             })}
       </div>

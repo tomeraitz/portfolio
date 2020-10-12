@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/navbar.css';
 import logo from '../images/imageedit_6_7757247570.png'
 import { observer, inject } from 'mobx-react';
+import { FaBars } from "react-icons/fa";
 
 @inject('GenralStore', 'ProjectStore')
 @observer
@@ -13,12 +14,12 @@ class NavBar extends Component {
     componentDidMount() {
       // this.props.GenralStore.changeColor()
       window.addEventListener('scroll', this.listenScrollEvent)
+      window.addEventListener('resize', this.props.GenralStore.setToDefault)
     }
 
   render() {
     return (
       <div className={this.props.GenralStore.activeClassNa}>
-      
           <div>
               <img id="logo" 
                   alt="logo" 
@@ -26,15 +27,19 @@ class NavBar extends Component {
                   width="auto" 
                   height="auto">
               </img>
-          </div>
+           </div>
 
               {this.props.GenralStore.items.map(i => {
                 return <div key={i.id} 
                             id={i.id} 
                             onClick={this.handelClick} 
                             className={i.className} >{i.id}
+                            
                         </div>
                 })}
+              <div onClick={()=>this.props.GenralStore.toggleMenu()} id="humbugger" className={this.props.GenralStore.humbuggerClass}>
+                <FaBars id="FaBars"/>
+              </div>
         </div>
     );
   }

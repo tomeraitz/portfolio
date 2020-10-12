@@ -1,6 +1,6 @@
 .main{
     display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(36em, 2fr));
+    grid-template-rows: repeat(auto-fill, minmax(0px, 2fr));
     overflow-x: hidden;
   }
   
