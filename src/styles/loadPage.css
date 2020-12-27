@@ -5,7 +5,9 @@
     display: grid;
     justify-items: center;
     align-items: center;
-
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 }
 
 .load-box{
@@ -13,9 +15,6 @@
     grid-template-rows: 80% 5%;
     justify-items: center;
     align-items: center;
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards;
-    animation-delay: 1.5s;
 }
 
 img{
