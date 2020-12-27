@@ -24,5 +24,5 @@ ReactDOM.render(<Provider {...stores}>
                     <App />
                 </Provider>, document.getElementById('root'));
 
-serviceWorker.register();
+serviceWorker.unregister();
 activeAosAnimation();

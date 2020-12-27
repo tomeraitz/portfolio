@@ -12,3 +12,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body:after {
+  content: url('./images/catcgAfrog.png') 
+            url('./images/com.jpg') 
+            url('./images/doggies.JPG') 
+            url('./images/drs.PNG') 
+            url('./images/goldrush-min.PNG') 
+            url('./images/imageedit_1_7200359117.png') 
+            url('./images/imageedit_6_7757247570.png') 
+            url('./images/mixed-gears5.jpg')
+            url('./images/mms-gap-logo.png')
+            url('./images/ORM-CRM.jpg')
+            url('./images/quiz.JPG')
+            url('./images/quizYourSelf.png')
+            url('./images/rick-and-com.JPG')
+            url('./images/Tomer\ Raitz.png')
+            url('./images/Tomer\ Raitz2.png')
+            url('./images/web-design-2038872_960_720.jpg');
+  display: none; 
+}

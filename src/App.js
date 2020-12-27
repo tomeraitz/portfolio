@@ -6,7 +6,7 @@ import LoadPage from './components/LoadPage';
 
 const Main = lazy(() => {
   return new Promise(resolve => {
-    setTimeout(() => resolve(import('./components/Main')), 5000);
+    setTimeout(() => resolve(import('./components/Main')), 2000);
   });
 });
 
@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div>
         <Suspense fallback={<LoadPage />}>
-          <Main></Main>
+          <Main className="app"></Main>
         </Suspense>
        </div>
     )
