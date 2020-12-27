@@ -8,8 +8,38 @@ import frogI from '../images/catcgAfrog.png'
 import drsImage from '../images/drs.PNG'
 import tomerImage from '../images/Tomer Raitz.png'
 
-const rickAndMorty = {
+const GoldRus = {
     id: 0,
+    title: "Gold-Rush Game",
+    text: "The nostalgic 'Gold-Rush' game - collect as many coins as possible",
+    gitHub: "https://github.com/tomeraitz/gold-rush-client",
+    url: "https://gold-rush.netlify.app/",
+    target: "_blank",
+    cssDescription: "none",
+    cssDescriptionGrid: "none",
+    cssClassHover: 'projects-label-des',
+    img: gold,
+    labels: [{
+        text: 'Nodejs',
+        cssClassHover: 'projects-label-des'
+    }, {
+        text: 'React',
+        cssClassHover: 'projects-label-des'
+    }, {
+        text: 'React Hooks',
+        cssClassHover: 'projects-label-des'
+    }, {
+        text: 'WebSokect',
+        cssClassHover: 'projects-label-des'
+    }, {
+        text: 'Nestjs',
+        cssClassHover: 'projects-label-des'
+    }],
+    animation: "fade-left"
+}
+
+const rickAndMorty = {
+    id: 1,
     title: "Rick And Morty Game",
     text: "Real-time multi/single player online game, based on the TV cartoon Rick and Morty",
     gitHub: "https://github.com/tomeraitz/rick-morty-game",
@@ -42,7 +72,7 @@ const rickAndMorty = {
 }
 
 const crm = {
-    id: 1,
+    id: 2,
     title: "ORM-CRM",
     text: "ORM-CRM helps small businesses manage their clients using advanced analytical tools",
     gitHub: "https://github.com/tomeraitz/React-FullStack-CRM-System",
@@ -69,7 +99,7 @@ const crm = {
 }
 
 const MMS = {
-    id: 2,
+    id: 3,
     title: "MMS-GAP",
     text: "MMS-GAP is an information system that helps medical experts and their patients communicate",
     gitHub: "https://github.com/mms-gap/code",
@@ -105,36 +135,6 @@ const MMS = {
         }
     ],
     animation: "fade-right"
-}
-
-const GoldRus = {
-    id: 3,
-    title: "Gold-Rush Game",
-    text: "The nostalgic 'Gold-Rush' game with multiplayer functionality",
-    gitHub: "https://github.com/tomeraitz/GoldRush-game",
-    url: "https://gold-rush-multi.herokuapp.com/",
-    target: "_blank",
-    cssDescription: "none",
-    cssDescriptionGrid: "none",
-    cssClassHover: 'projects-label-des',
-    img: gold,
-    labels: [{
-        text: 'Nodejs',
-        cssClassHover: 'projects-label-des'
-    }, {
-        text: 'vanilla js',
-        cssClassHover: 'projects-label-des'
-    }, {
-        text: 'Jquery',
-        cssClassHover: 'projects-label-des'
-    }, {
-        text: 'WebSokect',
-        cssClassHover: 'projects-label-des'
-    }, {
-        text: 'Express',
-        cssClassHover: 'projects-label-des'
-    }],
-    animation: "fade-left"
 }
 
 const quiz = {
@@ -281,6 +281,6 @@ const tomer = {
     }],
     animation: "fade-right"
 }
-const projects = [rickAndMorty, crm, MMS, GoldRus, quiz, doggies, frog, drs, tomer]
+const projects = [GoldRus, rickAndMorty, crm, MMS, quiz, doggies, frog, drs, tomer]
 
 export default projects
