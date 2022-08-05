@@ -44,7 +44,7 @@
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
